@@ -19,6 +19,7 @@ var testData = []struct {
 	ToFieldName             string
 	DepunctWithInitialUpper string
 	DepunctWithInitialLower string
+	Capitalize              string
 }{
 	{
 		Value:                   "name",
@@ -31,6 +32,7 @@ var testData = []struct {
 		ToFieldName:             "name",
 		DepunctWithInitialUpper: "Name",
 		DepunctWithInitialLower: "name",
+		Capitalize:              "Name",
 	},
 	{
 		Value:                   "provider_id",
@@ -43,6 +45,7 @@ var testData = []struct {
 		ToFieldName:             "provider_id",
 		DepunctWithInitialUpper: "ProviderID",
 		DepunctWithInitialLower: "providerID",
+		Capitalize:              "Provider_id",
 	},
 	{
 		Value:                   "app-identity",
@@ -55,6 +58,7 @@ var testData = []struct {
 		ToFieldName:             "app_identity",
 		DepunctWithInitialUpper: "AppIdentity",
 		DepunctWithInitialLower: "appIdentity",
+		Capitalize:              "App-identity",
 	},
 	{
 		Value:                   "uuid",
@@ -67,6 +71,7 @@ var testData = []struct {
 		ToFieldName:             "uuid",
 		DepunctWithInitialUpper: "UUID",
 		DepunctWithInitialLower: "uuid",
+		Capitalize:              "Uuid",
 	},
 	{
 		Value:                   "oauth-client",
@@ -79,6 +84,7 @@ var testData = []struct {
 		ToFieldName:             "oauth_client",
 		DepunctWithInitialUpper: "OAuthClient",
 		DepunctWithInitialLower: "oauthClient",
+		Capitalize:              "Oauth-client",
 	},
 	{
 		Value:                   "Dyno all",
@@ -91,6 +97,7 @@ var testData = []struct {
 		ToFieldName:             "dyno_all",
 		DepunctWithInitialUpper: "DynoAll",
 		DepunctWithInitialLower: "DynoAll",
+		Capitalize:              "Dyno all",
 	},
 	{
 		Value:                   "providerId",
@@ -103,6 +110,7 @@ var testData = []struct {
 		ToFieldName:             "provider_id",
 		DepunctWithInitialUpper: "ProviderID",
 		DepunctWithInitialLower: "providerID",
+		Capitalize:              "Providerid",
 	},
 	{
 		Value:                   "Id",
@@ -115,6 +123,7 @@ var testData = []struct {
 		ToFieldName:             "id",
 		DepunctWithInitialUpper: "ID",
 		DepunctWithInitialLower: "ID",
+		Capitalize:              "Id",
 	},
 }
 
