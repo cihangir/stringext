@@ -37,6 +37,25 @@ func Pointerize(ident string) string {
 	return string(unicode.ToLower(r))
 }
 
+// Capitalize uppercases the first char of s and lowercases the rest.
+func Capitalize(str string) string {
+	buf := &bytes.Buffer{}
+	var r0 rune
+	var size int
+
+	r0, size = utf8.DecodeRuneInString(str)
+	str = str[size:]
+	buf.WriteRune(unicode.ToUpper(r0))
+
+	for len(str) > 0 {
+		r0, size = utf8.DecodeRuneInString(str)
+		str = str[size:]
+		buf.WriteRune(unicode.ToLower(r0))
+	}
+
+	return buf.String()
+}
+
 // JSONTag generates json tag for given string, it is using the javascript
 // concepts
 //
