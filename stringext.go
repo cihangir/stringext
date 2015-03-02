@@ -74,6 +74,27 @@ func JSONTag(n string, required bool) string {
 	return fmt.Sprintf("`json:\"%s\"`", strings.Join(tags, ","))
 }
 
+func JSONTagWithIgnored(n string, required bool, ignored bool) string {
+	modified := ToLowerFirst(Normalize(n))
+
+	tags := []string{modified}
+	if !required {
+		tags = append(tags, "omitempty")
+	}
+
+	// TOOD - this is an ugly hack to inject string into jsontags, fixensie
+	if strings.ToLower(n) == "id" {
+		tags = append(tags, "string")
+	}
+
+	// if this field is ingored, override all other tags
+	if ignored {
+		tags = []string{"-"}
+	}
+
+	return fmt.Sprintf("`json:\"%s\"`", strings.Join(tags, ","))
+}
+
 // Normalize removes non a-z characters and uppercases the following character,
 // all characters followed by it will be lowercased if the word is one the
 // acronymsi
