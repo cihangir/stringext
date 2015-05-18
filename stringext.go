@@ -74,7 +74,7 @@ func JSONTag(n string, required bool) string {
 	return fmt.Sprintf("`json:\"%s\"`", strings.Join(tags, ","))
 }
 
-func JSONTagWithIgnored(n string, required bool, ignored bool) string {
+func JSONTagWithIgnored(n string, required bool, ignored bool, fieldType string) string {
 	modified := ToLowerFirst(Normalize(n))
 
 	tags := []string{modified}
@@ -82,8 +82,8 @@ func JSONTagWithIgnored(n string, required bool, ignored bool) string {
 		tags = append(tags, "omitempty")
 	}
 
-	// TOOD - this is an ugly hack to inject string into jsontags, fixensie
-	if strings.ToLower(n) == "id" {
+	switch fieldType {
+	case "int64", "float64", "uint64":
 		tags = append(tags, "string")
 	}
 
