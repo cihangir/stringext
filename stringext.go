@@ -191,8 +191,8 @@ func AsComment(c string) string {
 
 // Contains checks if the given string is in given string slice
 func Contains(n string, r []string) bool {
-	for _, r := range r {
-		if r == n {
+	for _, s := range r {
+		if s == n {
 			return true
 		}
 	}
